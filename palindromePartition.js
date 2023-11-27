@@ -20,7 +20,6 @@ var partition = function(s) {
                 break;
             }
         };
-        
     };
     return answer;
 };

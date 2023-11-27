@@ -22,7 +22,6 @@ var minimumTotal = function(triangle) {
             answer[i][j] = Math.min(answer[i-1][j], answer[i-1][j-1]) + triangle[i][j];
         }
     };
-    let min = Math.min(answer[answer.length - 1]);
     return Math.min(...answer[answer.length - 1]);
 };
 
