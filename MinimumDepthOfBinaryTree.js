@@ -17,16 +17,19 @@ var minDepth = function(root) {
     queue.push(root);
     var depth = 1;
     while(queue[0]) {
-        var node = queue.shift();
-        if (!node.left && !node.right) {
-            return depth;
-        }
-        if (node.left) {
-            queue.push(node.left);
-        }
-        if (node.right) {
-            queue.push(node.right)
+        const queueSize = queue.length;
+        for (let i = 0; i < queueSize; i++) {
+            var node = queue.shift();
+            if (!node.left && !node.right) {
+                return depth;
+            }
+            if (node.left) {
+                queue.push(node.left);
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
         }
         depth++;
-    }
+    };
 }
