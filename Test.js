@@ -1,11 +1,18 @@
-const animal = {
-    name: 'woof'
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    talk() {
+        console.log("Hello my name is " + this.name);
+    }
 }
 
-const dog = Object.create(animal);
-dog.bark = function() {
-    console.log('I am barking ' + this.name);
+class Dog extends Animal {
+    talk() {
+        super.talk();
+        console.log("woof");
+    }
 }
 
-console.log(dog.bark());
-console.log(animal.bark());
+let dog = new Dog("Harry")
+dog.talk();
